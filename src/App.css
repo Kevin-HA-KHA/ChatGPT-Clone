@@ -1,38 +1,247 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html{
+  font-size: 62.5%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body{
+  background: rgb(3 ,0 , 31);
+  color: white;
+  font-family: 'Poppins', sans-serif ;
 }
 
-.App-header {
-  background-color: #282c34;
+button {
+  cursor: pointer;
+}
+
+.App{
   min-height: 100vh;
+  display: flex;
+}
+
+.sideBar{
+  flex: 1;
+  border-right: 1px solid rgb(100, 100, 100);
+  display: flex;
+  flex-direction: column;
+}
+
+.main{
+  flex: 3;
+}
+
+.logo {
+  margin-right: 1rem;
+}
+
+.brand {
+  font-size: 2rem;
+}
+
+.upperSide {
+  padding: 2.5rem;
+  flex: 7;
+  border-bottom: 1px solid rgb(100, 100, 100);
+}
+
+.upperSideTop {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.lowerSide {
+  flex: 3;
+}
+
+.addBtn {
+  height: 2rem;
+  padding-right: 1rem;
+}
+
+.midBtn {
+  background: #5a4bff;
+  border: none;
+  color: white;
+  padding: 1.5rem;
+  font-size: 1.5rem;
+  width: 25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+  border-radius: .5rem;
+}
+
+.query {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  color: rgba(222, 222, 222, 1);
+  color: white;
+  padding: 1.5rem;
+  width: 25rem;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  border-radius: .5rem;
+  border: 1px solid rgb(98, 98, 98);
+}
+
+.query>img {
+  margin-right: 2rem;
+  object-fit: cover;
+  height: 1.75rem;
+}
+
+
+.lowerSide {
+  padding: 2rem;
+}
+
+.listItems {
+  margin: .75rem;
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+  text-align: left;
+}
+
+.listItemsImg {
+  margin: 1rem;
+  padding-right: 1rem;
+}
+
+.listItems:nth-child(1)>.listItemsImg {
+  margin-right: .5rem; 
+}
+
+.listItems:nth-child(3)>.listItemsImg {
+  margin-right: .75rem; 
+}
+
+.main {
+  min-height: calc(100vh -14rem);
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 6rem 10rem;
+  margin-bottom: 0;
+}
+
+.chats {
+  overflow: hidden;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  width: 100%;
+  max-width: 80rem;
+  height: calc(100vh - 17rem);
+}
+
+.chat {
+  margin: 1rem;
+  padding: 2rem 3rem;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: flex-start;
+  text-align: justify;
+}
+
+.bot {
+  background: rgba(28, 30, 58, 1);
+  width: fit-content;
+  border-radius: .5rem;
+}
+
+.chatImg {
+  object-fit: cover;
+  width: 3.5rem;
+  margin-right: 2rem;
+  border-radius: .5rem;
+}
+
+.chatFooter {
+  margin-top: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  position: relative;
+}
+
+.inp {
+  padding: .5rem;
+  background: rgba(28, 30, 58, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  max-width: 75rem;
+  border-radius: .5rem;
+}
+
+.inp>input {
+  width: calc(100% - 3rem);
+  outline: none;
+  padding: 1.25rem;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.inp>input, .send {
+  background: transparent;
+  border: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.chatFooter>p {
+  margin: 2rem 0;
+}
+
+.txt {
+  line-height: 2.3rem;
+  color: rgba(222, 222, 222, 1);
+}
+
+.loader {
+  position: absolute;
+  padding: 0 1rem;
+  margin: 0;
+  font-size: 2rem;
+  bottom: 12rem;
+  background: rgba(28, 30, 58, 1);
+  border-radius: .5rem;
+  display: none;
+  opacity: 0;
+} 
+
+.loaderDisplay {
+  display: block;
+  opacity: 1;
+}
+
+.firstDot {
+  animation: loader 2.5s infinite;
+  animation-delay: .25s;
+}
+.secondDot {
+  animation: loader 2.5s infinite;
+  animation-delay: .5s;
+}
+.thirdDot {
+  animation: loader 2.5s infinite;
+  animation-delay: .75s;
+}
+
+
+@keyframes loader {
+  0%, 100%{
+    opacity: 1;
   }
-  to {
-    transform: rotate(360deg);
+  50%{
+    opacity: 0;
   }
 }
